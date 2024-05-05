@@ -17,7 +17,7 @@ const applicationSchema = new mongoose.Schema(
         interviewDate: { type: Date },
         interviewComment: { type: String },
         status: { type: String, enum: [ "beworben - Rückmeldung offen", "eingeladen zum Interview", "Firmenfeedback offen", "Mein Feedback offen", "Absage erhalten", "Absage erteilt" ], default: "beworben - Rückmeldung offen" },
-        userId: { type: mongoose.Types.ObjectId, ref: "User" }
+        // userId: { type: mongoose.Types.ObjectId, ref: "User" }
 
     }, {
         collection: "applications", timestamps: true

@@ -3,6 +3,8 @@ import cors from "cors";
 import morgan from "morgan";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
+import { applicationRouter } from "./routes/applicationRouter.js";
+import { filesUploadRouter } from "./routes/filesUploadRouter.js";
 
 dotenv.config();
 
@@ -23,8 +25,9 @@ app.use(express.json()) // body parser
 app.get("/", (req, res) => res.send("it works"));
 
 // ---- ROUTER-MIDDLEWARES
-
-
+app.use("/api/v1/applications", applicationRouter)
+app.use("/api/v1/files", filesUploadRouter)
+app.use("/download", express.static("data/files"))
 // ---------------
 // Declaration of serverListenPort-function which will be called in the DB-connection setup:
 
