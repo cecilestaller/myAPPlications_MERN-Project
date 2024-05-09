@@ -1,0 +1,17 @@
+header {
+  margin-bottom: 5vw;
+  nav {
+    display: flex;
+    justify-content: space-between;
+    h1 {
+    }
+    div {
+      display: flex;
+      width: 10vw;
+      justify-content: space-between;
+    }
+  }
+  .menu-hide {
+    display: none;
+  }
+}
