@@ -14,20 +14,24 @@ const ClosedApps = () => {
         );
         const { success, result, error, message } = await res.json();
         return setClosedApps(result);
-      } catch (error) {}
+      } catch (error) {
+        console.log(error);
+      }
     }
     fetchClosedApps();
   }, []);
   console.log(closedApps);
   return (
-    <section className="closed-apps">
+    <section className="content-wrapper">
       <Header />
-      <h2>Meine geschlossenen Bewerbungen</h2>
-      <article className="app-cards-wrap">
-        {closedApps?.map((app) => (
-          <AppCard key={app?._id} app={app} />
-        ))}
-      </article>
+      <h2 className="page-headline">Meine geschlossenen Bewerbungen</h2>
+      <div className="card-wrapper">
+        <article className="app-cards-wrap">
+          {closedApps?.map((app) => (
+            <AppCard key={app?._id} app={app} />
+          ))}
+        </article>
+      </div>
     </section>
   );
 };

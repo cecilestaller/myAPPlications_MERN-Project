@@ -21,14 +21,16 @@ const OpenApps = () => {
   }, []);
   console.log(openApps);
   return (
-    <section className="open-apps">
+    <section className="content-wrapper">
       <Header />
-      <h2>Meine offenen Bewerbungen</h2>
-      <article className="app-cards-wrap">
-        {openApps?.map((app) => (
-          <AppCard key={app._id} app={app} />
-        ))}
-      </article>
+      <h2 className="page-headline">Meine offenen Bewerbungen</h2>
+      <div className="card-wrapper">
+        <article className="app-cards-wrap">
+          {openApps?.map((app) => (
+            <AppCard key={app._id} app={app} />
+          ))}
+        </article>
+      </div>
     </section>
   );
 };

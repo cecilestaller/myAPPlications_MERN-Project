@@ -1,0 +1,39 @@
+.add-app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    gap: 1vw;
+    margin-bottom: 3vw;
+  }
+  .form-flex {
+    display: flex;
+    align-items: center;
+  }
+  input,
+  select,
+  textarea {
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+  }
+  button {
+    background-color: rgb(144, 193, 210); /* Hintergrundfarbe */
+    color: rgb(33, 37, 41); /* Textfarbe */
+    font-size: 14px; /* Kleinere Schriftgröße */
+    padding: 10px 8px;
+    min-width: auto;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  button:hover {
+    background-color: rgb(200, 220, 230); /* Farbe bei Hover */
+    transform: scale(1.05); /* Leichte Vergrößerung bei Hover */
+  }
+}

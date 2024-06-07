@@ -1,17 +1,40 @@
 header {
-  margin-bottom: 5vw;
+  margin-bottom: 3vw;
+  padding: 1vw 3vw;
+
   nav {
     display: flex;
     justify-content: space-between;
+
     h1 {
     }
-    div {
+    .searchbar {
+      input {
+        width: 30vw;
+        padding: 0.5vw 3vw;
+        border-radius: 10px;
+      }
+      input::placeholder {
+        text-align: center;
+      }
+    }
+    .icon-wrap {
       display: flex;
       width: 10vw;
       justify-content: space-between;
+      align-items: center;
     }
   }
   .menu-hide {
     display: none;
+  }
+  .search-results {
+    display: flex;
+    justify-content: center;
+    div {
+      text-align: center;
+      padding: 0.5vw 3vw;
+      width: 30vw;
+    }
   }
 }

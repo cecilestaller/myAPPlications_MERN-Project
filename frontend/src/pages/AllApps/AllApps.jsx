@@ -1,32 +1,24 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { backendURL } from "../../api/api";
 import "./AllApps.scss";
 import Header from "../../components/Header/Header";
 import AppCard from "../../components/AppCard/AppCard";
+import { AllAppsContext } from "../../context/Context";
 
 const AllApps = () => {
-  const [allApps, setAllApps] = useState();
+  const { allApps, setAllApps } = useContext(AllAppsContext);
 
-  useEffect(() => {
-    async function fetchAllApps() {
-      try {
-        const res = await fetch(`${backendURL}/api/v1/applications`);
-        const { success, result, error, message } = await res.json();
-        return setAllApps(result);
-      } catch (error) {
-        console.log(error);
-      }
-    }
-    fetchAllApps();
-  }, []);
   return (
-    <section className="all-apps">
+    <section className="content-wrapper">
       <Header />
-      <article className="app-cards-wrap">
-        {allApps?.map((app) => (
-          <AppCard key={app?._id} app={app} />
-        ))}
-      </article>
+      <h2 className="page-headline">Alle Bewerbungen</h2>
+      <div className="card-wrapper">
+        <article className="app-cards-wrap">
+          {allApps?.map((app) => (
+            <AppCard key={app?._id} app={app} />
+          ))}
+        </article>
+      </div>
     </section>
   );
 };
