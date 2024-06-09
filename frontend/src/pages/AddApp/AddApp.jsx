@@ -262,6 +262,7 @@ const AddApp = () => {
             <option value="Xing">Xing</option>
             <option value="E-Mail">E-Mail</option>
             <option value="Sonstige">Sonstige</option>
+            <option value="Sonstige">Test</option>
             <option value="Sonstige">Test2</option>
           </select>
 
